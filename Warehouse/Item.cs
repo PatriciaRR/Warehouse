@@ -6,7 +6,7 @@ namespace Warehouse
     {
         
         public string Name {get;}
-        public decimal SalePrice {get;}
+        public decimal SalePrice {get;} // could add {set;} to allow for changing value
         public string Category {get;}
 
         public Item (string name, decimal salePrice, string category)
@@ -16,10 +16,10 @@ namespace Warehouse
             Category = category;
         }
 
-        public void DisplayItemDetails()
-        {
-            Console.WriteLine($"Item data:\nName: {Name} \nPrice: {SalePrice} \nCategory: {Category}");
-        }
+        // public void DisplayItemDetails()
+        // {
+        //     Console.WriteLine($"Item data:\nName: {Name} \nPrice: {SalePrice} \nCategory: {Category}");
+        // }
           
     }
 }
