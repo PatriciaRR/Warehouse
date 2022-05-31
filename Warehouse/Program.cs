@@ -6,10 +6,24 @@ namespace Warehouse
     {
         public static void Main(string[] args)
         {
-          
-        //List<string> allItems = new List<string> ("001A", "Notebook", 2.99) & Loop
-        Item item = new Item("001A", "Notebook", 2.99);
-        item.DisplayItemDetails();
+
+            Warehouse warehouse = new Warehouse (
+                new Dictionary <Item, int>
+                {
+                    {new Item("notebook", 2.50m, "stationary"), 100},
+                    {new Item("ruler", 1.50m, "stationary"), 50},
+                    {new Item("football", 40m, "sports"), 100},
+                    {new Item("swimming cap", 12m, "sports"), 100},
+                    {new Item("toothpaste", 3m, "hygiene"), 100},
+                    {new Item("deodorant", 3.50m, "stationary"), 100}
+                }
+            );
+
+            foreach(Item item in warehouse.Stock.Keys)
+            {
+                Console.WriteLine(
+                    $"There are {warehouse.Stock[item]} of item \"{item.Name}\" in category \"{item.Category}\" at a price of \"{item.SalePrice}\" each.");
+            }
           
         }
     }

@@ -4,20 +4,21 @@ namespace Warehouse
 {
     public class Item
     {
-        public string Reference {get;}
+        
         public string Name {get;}
-        public double SalePrice {get;}
+        public decimal SalePrice {get;}
+        public string Category {get;}
 
-        public Item (string reference, string name, double salePrice)
+        public Item (string name, decimal salePrice, string category)
         {
-            Reference = reference;
             Name = name;
             SalePrice = salePrice;
+            Category = category;
         }
 
         public void DisplayItemDetails()
         {
-            Console.WriteLine($"Item data: \nRef: {Reference} \nName: {Name} \nPrice: {SalePrice}");
+            Console.WriteLine($"Item data:\nName: {Name} \nPrice: {SalePrice} \nCategory: {Category}");
         }
           
     }
